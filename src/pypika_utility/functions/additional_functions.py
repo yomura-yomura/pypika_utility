@@ -1,9 +1,9 @@
-from pypika.functions import *
+from pypika.functions import Function
 
 
 class ArrayMax(Function):
-    def __init__(self, input):
-        super().__init__("ARRAY_MAX", input)
+    def __init__(self, expr):
+        super().__init__("ARRAY_MAX", expr)
 
 
 class RegexpLike(Function):
