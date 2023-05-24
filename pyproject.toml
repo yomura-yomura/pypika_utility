@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypika_utility"
+description = "https://github.com/yomura-yomura/pypika_utility"
+readme = "README.md"
+license = {file = "LICENSE"}
+dependencies = [
+    "pypika"
+]
+
+dynamic = ["version"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+
+# src/foo/__init__.py の version を参照する
+[tool.setuptools.dynamic]
+version = {attr = "pypika_utility.__version__"}
+
+# パッケージ作成時に指定のファイルにバージョン情報を書き込む
+[tool.setuptools_scm]
+write_to = "src/pypika_utility/_version.py"
